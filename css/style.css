@@ -1,0 +1,81 @@
+body
+{
+    overflow: hidden;
+
+    margin: 0px;
+}
+
+#settingBox
+{
+    z-index: 2;
+    position: absolute;
+    
+    overflow: hidden;
+
+    height: 470px;
+    width: 270px;
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+    background-color: rgb(83, 69, 66);
+    border: 3px solid rgb(104, 92, 88);
+
+    visibility: hidden;
+}
+
+.setting
+{
+    
+    overflow: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.setting-text
+{
+    float: left;
+    color: white;
+    font-size: 13px;
+}
+
+.setting-text-input
+{
+    float: left;
+    margin-left: 5px;
+    color: white;
+}
+
+.setting-date-input
+{
+    float: left;
+    margin-left: 5px;
+}
+
+.setting-file-input
+{
+    float: left;
+    width: 180px;
+    margin-left: 5px;
+    color: white;
+}
+
+.setting-slider-input
+{
+    float: left;
+    margin-left: 5px;
+    color: white;
+}
+
+.setting-slider-text
+{
+    float: left;
+    margin-left: 10px;
+    color: white;
+}
+
+#confirm-btn
+{
+    height: 35px;
+    width: 80px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="scripts/utils/p5.js" type="text/javascript"></script>
+    <script src="scripts/utils/localforage.min.js"></script>
+    <script src="scripts/utils/webgazer.js" type="text/javascript"></script>
+    <script src="scripts/utils/kalman.js" type="text/javascript"></script>
+
+    <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/init.js" type="text/javascript"></script>
+    <script src="scripts/floater.js" type="text/javascript"></script>
+    <script src="scripts/manager.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="settingBox">
+        <div id="max-amount" class="setting">
+            <div class="setting-text">上限個数:</div>
+            <input onchange="maxAmountChanged(this.value)" type="range" class="setting-slider-input" id="max-amount-input" min="50" max="500" value="200">
+            <div class="setting-slider-text" id="max-amount-value"></div>
+        </div>
+
+        <div id="mode" class="setting">
+            <div class="setting-text">文字モード:</div>
+            <input onchange="modeChanged(this.value)" type="checkbox" class="setting-checkbox-input" id="mode-input" unchecked>
+        </div>
+
+        <div id="endtime" class="setting">
+            <div class="setting-text">終了時刻:</div>
+            <input onchange="endtimeChanged(this)" type="datetime-local" class="setting-date-input" id="endtime-input">
+        </div>
+
+        <div id="background-img" class="setting">
+            <div class="setting-text">背景画像:</div>
+            <input onchange="backgroundImageChanged(this)" type="file" class="setting-file-input" id="background-image-input">
+        </div>
+
+        <hr>
+
+        <div id="size" class="setting">
+            <div class="setting-text">サイズ:</div>
+            <input onchange="sizeChanged(this.value)" type="range" class="setting-slider-input" id="size-input" min="0" max="100" value="40">
+            <div class="setting-slider-text" id="size-value"></div>
+        </div>
+
+        <div id="text-spacing" class="setting">
+            <div class="setting-text">文字間隔:</div>
+            <input onchange="textSpacingChanged(this.value)" type="range" class="setting-slider-input" id="text-spacing-input" min="0" max="100" value="25">
+            <div class="setting-slider-text" id="text-spacing-value"></div>
+        </div>
+
+        <div id="image-opacity" class="setting">
+            <div class="setting-text">本体不透明度:</div>
+            <input onchange="imageOpacityChanged(this.value)" type="range" class="setting-slider-input" id="image-opacity-input" min="0" max="100" value="25">
+            <div class="setting-slider-text" id="image-opacity-value"></div>
+        </div>
+
+        <div id="shadow-opacity" class="setting">
+            <div class="setting-text">影不透明度:</div>
+            <input onchange="shadowOpacityChanged(this.value)" type="range" class="setting-slider-input" id="shadow-opacity-input" min="0" max="100" value="25">
+            <div class="setting-slider-text" id="shadow-opacity-value"></div>
+        </div>
+
+        <div id="shadow-thickness" class="setting">
+            <div class="setting-text">影の太さ:</div>
+            <input onchange="shadowThicknessChanged(this.value)" type="range" class="setting-slider-input" id="shadow-thickness-input" min="0" max="20" value="8">
+            <div class="setting-slider-text" id="shadow-thickness-value"></div>
+        </div>
+
+        <div id="shadow-softness" class="setting">
+            <div class="setting-text">影の柔らかさ:</div>
+            <input onchange="shadowSoftnessChanged(this.value)" type="range" class="setting-slider-input" id="shadow-softness-input" min="0" max="10" value="4">
+            <div class="setting-slider-text" id="shadow-softness-value"></div>
+        </div>
+
+        <hr>
+
+        <div id="self-movespeed" class="setting">
+            <div class="setting-text">移動速度(自ら):</div>
+            <input onchange="localMovespeedChanged(this.value)" type="range" class="setting-slider-input" id="local-move-speed-input" min="0" max="30" value="7">
+            <div class="setting-slider-text" id="local-move-speed-value"></div>
+        </div>
+
+        <div id="follow-movespeed" class="setting">
+            <div class="setting-text">移動速度(視線):</div>
+            <input onchange="followMovespeedChanged(this.value)" type="range" class="setting-slider-input" id="follow-move-speed-input" min="0" max="30" value="10">
+            <div class="setting-slider-text" id="follow-move-speed-value"></div>
+        </div>
+
+        <div id="rotatespeed" class="setting">
+            <div class="setting-text">回転速度:</div>
+            <input onchange="rotatespeedChanged(this.value)" type="range" class="setting-slider-input" id="rotatespeed-input" min="0" max="30" value="5">
+            <div class="setting-slider-text" id="rotate-speed-value"></div>
+        </div>
+
+        <div id="confirm" class="setting">
+            <button onclick="clearBtnClicked()" type="button" class="setting-text-button" id="confirm-btn">飛蚊削除</button>
+        </div>
+    </div>
+</body>
+</html>
