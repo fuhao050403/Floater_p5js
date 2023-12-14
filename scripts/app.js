@@ -5,7 +5,7 @@ let manager;
 
 let bkImage;
 let floaterImages = [];
-const imgAmount = 4;
+const imgAmount = 5;
 
 let eyePos, eyeLastPos, eyeDir;
 

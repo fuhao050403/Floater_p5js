@@ -116,7 +116,6 @@ class FloaterManager
 
     removeFloaters(amount)
     {
-        console.log(amount);
         if (amount > this.floaters.length) return;
 
         for (let i = 0; i < amount; i++)
