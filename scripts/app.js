@@ -172,6 +172,7 @@ function initSettingElements()
     v_size.innerHTML = document.getElementById("size-input").value * 2 + "%";;
     v_textSpacing = document.getElementById("text-spacing-value");
     v_textSpacing.innerHTML = document.getElementById("text-spacing-input").value;
+    document.getElementById("text-spacing-input").disabled = true;
     v_imgOpacity = document.getElementById("image-opacity-value");
     v_imgOpacity.innerHTML = document.getElementById("image-opacity-input").value;
     v_shadowOpacity = document.getElementById("shadow-opacity-value");

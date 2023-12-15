@@ -91,6 +91,7 @@ class FloaterManager
         {
             // 给新生成的Floater创建随机的图像索引
             const newImgIndex = this.generateImageIndex();
+            console.log(newImgIndex);
             newFloater.setImageIndex(newImgIndex);
             // 根据生成的索引值,分配原始图像数据
             newFloater.updateImage(this.floaterRawImgs[11 + newImgIndex], this.shadowImgs[11 + newImgIndex]);
@@ -109,9 +110,11 @@ class FloaterManager
 
     generateImageIndex()
     {
-        const randNum = random(99); // 不能为100,若4张图片则间隔为25且索引值最大应为3,如果正好随机到100,则结果为4
-        const step = 100 / imgAmount;
-        return Math.floor(randNum / step);
+        //const randNum = random(99); // 不能为100,若4张图片则间隔为25且索引值最大应为3,如果正好随机到100,则结果为4
+        //const step = 100 / imgAmount;
+        //return Math.floor(randNum / step);
+
+        return this.amount % imgAmount;
     }
 
     removeFloaters(amount)
