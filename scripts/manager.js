@@ -7,6 +7,7 @@ class FloaterManager
 
         this.floaters = [];
         this.amount = 0;
+        this.totalAmount = 0;
         this.maxAmount = 200;
 
         // 图像参数
@@ -45,7 +46,7 @@ class FloaterManager
         this.setFloaterImage();
 
         /* ----- 初始生成Floater ----- */
-        const initCount = 1;
+        const initCount = 0;
         for (let i = 0; i < initCount; i++)
         {
             this.spawnFloater();
@@ -100,6 +101,7 @@ class FloaterManager
         // 添加到数列中
         this.floaters.push({floater: newFloater});
         this.amount++;
+        this.totalAmount++;
 
         // 如果超过最大允许数量,则删除多出的floater
         if (this.amount > this.maxAmount)
@@ -114,7 +116,7 @@ class FloaterManager
         //const step = 100 / imgAmount;
         //return Math.floor(randNum / step);
 
-        return this.amount % imgAmount;
+        return this.totalAmount % imgAmount;
     }
 
     removeFloaters(amount)
